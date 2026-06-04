@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Portal VIP - Portugal Mode</title>
 
 <style>
@@ -11,138 +12,170 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
 body{
-    height:100vh;
+    background:url('Thumb.png') center center/cover no-repeat fixed;
+    min-height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
-    font-family:Arial, Helvetica, sans-serif;
-
-    background:
-    linear-gradient(rgba(0,0,0,0.60), rgba(0,0,0,0.60)),
-    url('Thumb.png');
-
-    background-size:cover;
-    background-position:center;
-    background-repeat:no-repeat;
 }
 
 .container{
-    width:500px;
+
+    width:460px;
+
+    background:rgba(0,0,0,0.78);
+
+    border-radius:25px;
+
     padding:40px;
 
     text-align:center;
 
-    background:rgba(0,0,0,0.75);
+    backdrop-filter:blur(6px);
 
-    border-radius:25px;
+    box-shadow:0 0 30px rgba(177,89,255,0.6);
 
-    box-shadow:
-    0 0 20px rgba(255,255,255,0.15),
-    0 0 40px rgba(255,0,255,0.20);
 }
 
 .logo{
-    width:220px;
-    margin-bottom:15px;
+
+    width:90px;
+
+    margin-bottom:20px;
+
+    filter:drop-shadow(0 0 12px rgba(255,255,255,0.6));
+
 }
 
 h1{
+
     color:white;
-    font-size:28px;
+
     margin-bottom:10px;
+
+    font-size:28px;
+
 }
 
 .subtitulo{
-    color:#dcdcdc;
+
+    color:white;
+
+    font-size:15px;
+
     margin-bottom:25px;
-    font-size:18px;
+
 }
 
 input{
+
     width:100%;
-    padding:15px;
 
-    border:none;
-    border-radius:12px;
-
-    font-size:16px;
-
-    margin-bottom:15px;
-}
-
-button{
-    width:100%;
     padding:16px;
 
     border:none;
+
+    border-radius:12px;
+
+    margin-bottom:15px;
+
+    font-size:16px;
+
+}
+
+button{
+
+    width:100%;
+
+    padding:16px;
+
+    border:none;
+
     border-radius:12px;
 
     cursor:pointer;
 
-    font-size:20px;
+    font-size:18px;
+
     font-weight:bold;
 
-    color:black;
-
     background:linear-gradient(
-    90deg,
-    #ff4040,
-    #ffd500,
-    #00ff80,
-    #00cfff,
-    #ff00ff
+        90deg,
+        #ff3c3c,
+        #ff9900,
+        #ffee00,
+        #56ff56,
+        #00d9ff,
+        #b15fff,
+        #ff00ff
     );
+
+    transition:0.3s;
+
 }
 
 button:hover{
-    transform:scale(1.02);
+
+    transform:scale(1.03);
+
+    box-shadow:0 0 25px rgba(255,255,255,0.4);
+
 }
 
-.erro{
-    margin-top:15px;
-    color:#ff5a5a;
-    font-weight:bold;
-}
+.info{
 
-.aviso{
-    color:#dcdcdc;
+    color:white;
+
     margin-top:20px;
+
     font-size:14px;
+
+}
+
+#erro{
+
+    margin-top:15px;
+
+    color:#ff5555;
+
+    font-weight:bold;
+
 }
 
 </style>
-
 </head>
 
 <body>
 
 <div class="container">
 
-<img src="Brasão 1.png" class="logo">
+    <img src="Brasão 1.png" class="logo">
 
-<h1>PORTAL VIP</h1>
+    <h1>PORTAL VIP</h1>
 
-<p class="subtitulo">
-Conteúdo Exclusivo para Membros do Portugal Mode
-</p>
+    <p class="subtitulo">
+        Conteúdo Exclusivo para Membros do Portugal Mode
+    </p>
 
-<input
-type="password"
-id="senha"
-placeholder="Digite sua senha">
+    <input
+        type="password"
+        id="senha"
+        placeholder="Digite sua senha"
+    >
 
-<button onclick="verificarSenha()">
-ACESSAR
-</button>
+    <button onclick="verificarSenha()">
+        ACESSAR
+    </button>
 
-<div id="erro" class="erro"></div>
+    <div id="erro"></div>
 
-<p class="aviso">
-A senha é disponibilizada mensalmente para membros do canal.
-</p>
+    <p class="info">
+        A senha é disponibilizada mensalmente para membros do canal.
+    </p>
 
 </div>
 
@@ -150,21 +183,41 @@ A senha é disponibilizada mensalmente para membros do canal.
 
 function verificarSenha(){
 
-let senha =
-document.getElementById("senha").value;
+    let senha = document.getElementById("senha").value;
 
-if(senha === "PORTUGALMODE2026"){
+    if(senha === "PORTUGALMODE2026"){
 
-window.location.href = "portal.html";
+        document.getElementById("erro").style.color="#00ff88";
 
-}else{
+        document.getElementById("erro").innerHTML="Acesso liberado...";
 
-document.getElementById("erro").innerHTML =
-"Senha incorreta.";
+        setTimeout(function(){
+
+            window.location.href="portal.html";
+
+        },1000);
+
+    }
+
+    else{
+
+        document.getElementById("erro").style.color="#ff5555";
+
+        document.getElementById("erro").innerHTML="Senha incorreta";
+
+    }
 
 }
 
-}
+document.getElementById("senha").addEventListener("keypress", function(event){
+
+    if(event.key === "Enter"){
+
+        verificarSenha();
+
+    }
+
+});
 
 </script>
 
