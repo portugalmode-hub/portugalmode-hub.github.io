@@ -1,5 +1,7 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,19 +19,25 @@
 
 body{
 
-    background:url('Thumb.png') center center/cover no-repeat fixed;
+    background:
+    linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.65)),
+    url('Thumb.png');
 
-    min-height:100vh;
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
 
     color:white;
 
-    padding:40px;
+    min-height:100vh;
+
+    padding:40px 20px;
 
 }
 
 .container{
 
-    max-width:1200px;
+    max-width:1400px;
 
     margin:auto;
 
@@ -45,15 +53,15 @@ body{
 
 .logo{
 
-    width:140px;
+    width:180px;
 
-    margin-bottom:20px;
+    margin-bottom:15px;
 
-    filter:drop-shadow(0 0 15px rgba(255,255,255,0.5));
+    filter:drop-shadow(0 0 20px rgba(255,255,255,.35));
 
 }
 
-h1{
+.header h1{
 
     font-size:42px;
 
@@ -61,19 +69,20 @@ h1{
 
 }
 
-.subtitulo{
+.header p{
 
-    color:#dddddd;
+    color:#d8d8d8;
 
     font-size:18px;
 
 }
 
-.grid{
+.cards{
 
     display:grid;
 
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    grid-template-columns:
+    repeat(auto-fit,minmax(320px,1fr));
 
     gap:25px;
 
@@ -81,23 +90,32 @@ h1{
 
 .card{
 
-    background:rgba(0,0,0,0.75);
+    background:rgba(0,0,0,.75);
 
-    border-radius:20px;
+    border-radius:25px;
 
-    padding:25px;
+    padding:30px;
 
-    backdrop-filter:blur(6px);
+    min-height:250px;
 
-    box-shadow:0 0 20px rgba(177,89,255,0.5);
+    backdrop-filter:blur(8px);
 
-    transition:0.3s;
+    border:1px solid rgba(255,255,255,.08);
+
+    box-shadow:
+    0 0 20px rgba(177,89,255,.20);
+
+    transition:.3s;
 
 }
 
 .card:hover{
 
-    transform:translateY(-5px);
+    transform:translateY(-6px);
+
+    box-shadow:
+    0 0 25px rgba(255,255,255,.15),
+    0 0 35px rgba(177,89,255,.35);
 
 }
 
@@ -105,23 +123,27 @@ h1{
 
     margin-bottom:15px;
 
+    font-size:24px;
+
 }
 
 .card p{
 
-    line-height:1.6;
+    color:#e1e1e1;
+
+    line-height:1.7;
 
 }
 
-.botao{
+.btn{
 
     display:inline-block;
 
-    margin-top:15px;
+    margin-top:20px;
 
-    padding:12px 20px;
+    padding:14px 22px;
 
-    border-radius:10px;
+    border-radius:12px;
 
     text-decoration:none;
 
@@ -129,26 +151,44 @@ h1{
 
     color:black;
 
-    background:linear-gradient(
-        90deg,
-        #ff3c3c,
-        #ff9900,
-        #ffee00,
-        #56ff56,
-        #00d9ff,
-        #b15fff,
-        #ff00ff
+    background:
+    linear-gradient(
+    90deg,
+    #ff3c3c,
+    #ffb000,
+    #ffe600,
+    #4cff4c,
+    #00d9ff,
+    #b15fff,
+    #ff00ff
     );
+
+    transition:.3s;
 
 }
 
-.botao:hover{
+.btn:hover{
 
     transform:scale(1.05);
+
+    box-shadow:0 0 20px rgba(255,255,255,.35);
+
+}
+
+.footer{
+
+    text-align:center;
+
+    margin-top:40px;
+
+    color:#cfcfcf;
+
+    font-size:14px;
 
 }
 
 </style>
+
 </head>
 
 <body>
@@ -161,26 +201,29 @@ h1{
 
 <h1>PORTAL VIP</h1>
 
-<p class="subtitulo">
+<p>
 Bem-vindo à área exclusiva dos membros do Portugal Mode
 </p>
 
 </div>
 
-<div class="grid">
+<div class="cards">
 
 <div class="card">
-<h2>🎥 Vídeos Exclusivos</h2>
+
+<h2>🎥 Vídeos Importantes</h2>
 
 <p>
-Conteúdos antecipados, bastidores,
-testes exclusivos e vídeos liberados
-somente para membros.
+Guias essenciais do canal Portugal Mode.
+Atmosphere, Android, emuNAND, DBI,
+Tico, atualizações e muito mais.
 </p>
 
-<a href="#" class="botao">
-ASSISTIR
-</a>
+<a
+href="https://www.youtube.com/playlist?list=PLUR5mCwAoDW2yAuL3mbtyz4nXpArzdnQA"
+target="_blank"
+class="btn">
+ASSISTIR </a>
 
 </div>
 
@@ -190,27 +233,33 @@ ASSISTIR
 
 <p>
 Entre no grupo exclusivo dos membros
-e receba novidades, avisos e conteúdos
-antes de todo mundo.
+para receber avisos, novidades e
+participar mais de perto do canal.
 </p>
 
-<a href="#" class="botao">
-ENTRAR
-</a>
+<a
+href="https://chat.whatsapp.com/DuwmPKV5H8kKlEAzrU4Ixp"
+target="_blank"
+class="btn">
+ENTRAR </a>
 
 </div>
 
 <div class="card">
 
-<h2>📰 Notícias</h2>
+<h2>📁 Drive VIP Portugal Mode</h2>
 
 <p>
-
-✓ Novo vídeo exclusivo liberado<br>
-✓ Atualização Atmosphere disponível<br>
-✓ Novos conteúdos em preparação
-
+Acesse a pasta VIP do canal contendo
+materiais organizados, recursos,
+wallpapers, temas e conteúdos extras.
 </p>
+
+<a
+href="https://drive.google.com/drive/folders/1JbfNubxFQ77qDKSs9TJ8U6w1z2RCC6jc?usp=drive_link"
+target="_blank"
+class="btn">
+ABRIR DRIVE </a>
 
 </div>
 
@@ -220,10 +269,12 @@ ENTRAR
 
 <p>
 
-✓ Conteúdo antecipado<br>
+✓ Portal VIP<br>
 ✓ Grupo exclusivo<br>
-✓ Senha mensal do portal<br>
-✓ Participação em enquetes
+✓ Drive VIP Portugal Mode<br>
+✓ Guias importantes organizados<br>
+✓ Conteúdos especiais<br>
+✓ Novidades antecipadas
 
 </p>
 
@@ -231,38 +282,30 @@ ENTRAR
 
 <div class="card">
 
-<h2>📅 Conteúdo do Mês</h2>
+<h2>🏆 Membros VIP</h2>
 
 <p>
 
-15/06 - Vídeo Exclusivo<br>
-20/06 - Atualização Atmosphere<br>
-25/06 - Tema Portugal Mode<br>
-30/06 - Live Especial
-
-</p>
-
-</div>
-
-<div class="card">
-
-<h2>👑 Membro Destaque</h2>
-
-<p>
-
-Obrigado por apoiar o canal!
+Em breve...
 
 <br><br>
 
-<strong>Rafa Portugal</strong>
+Obrigado por apoiar o Portugal Mode.
 
 </p>
 
 </div>
+
+</div>
+
+<div class="footer">
+
+Portugal Mode © 2026
 
 </div>
 
 </div>
 
 </body>
+
 </html>
