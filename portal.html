@@ -3,7 +3,9 @@
 <html lang="pt-BR">
 
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Portal VIP - Portugal Mode</title>
@@ -135,49 +137,29 @@ body{
 
 }
 
-.membros-vip{
+.membros-card{
 
-    grid-column:1 / -1;
+    text-align:left;
 
-    max-width:800px;
+}
 
-    margin:0 auto;
+.membros-card .btn{
+
+    display:block;
+
+    width:200px;
 
     text-align:center;
 
 }
 
-.lista-membros{
+.membros-info{
 
-    margin-top:20px;
+    margin-top:15px;
+
+    font-size:16px;
 
     color:#e1e1e1;
-
-    line-height:1.8;
-
-    font-size:14px;
-
-    text-align:left;
-
-    column-count:2;
-
-    column-gap:35px;
-
-}
-
-.lista-membros div{
-
-    break-inside:avoid;
-
-}
-
-.membros-vip .btn{
-
-    display:block;
-
-    width:260px;
-
-    margin:15px auto;
 
 }
 
@@ -211,6 +193,10 @@ body{
 
     transition:.3s;
 
+    border:none;
+
+    cursor:pointer;
+
 }
 
 .btn:hover{
@@ -220,6 +206,165 @@ body{
     box-shadow:0 0 20px rgba(255,255,255,.35);
 
 }
+
+
+/* SOLICITAÇÃO DE JOGOS */
+
+.membros-vip{
+
+    grid-column:1 / -1;
+
+    max-width:800px;
+
+    margin:0 auto;
+
+    text-align:center;
+
+}
+
+.membros-vip .btn{
+
+    display:block;
+
+    width:260px;
+
+    margin:15px auto;
+
+}
+
+
+/* MODAL DOS MEMBROS */
+
+.modal{
+
+    display:none;
+
+    position:fixed;
+
+    z-index:9999;
+
+    left:0;
+
+    top:0;
+
+    width:100%;
+
+    height:100%;
+
+    background:rgba(0,0,0,.80);
+
+    backdrop-filter:blur(8px);
+
+    padding:30px 20px;
+
+    overflow-y:auto;
+
+}
+
+.modal-content{
+
+    position:relative;
+
+    max-width:900px;
+
+    margin:40px auto;
+
+    background:rgba(0,0,0,.92);
+
+    border-radius:25px;
+
+    padding:35px;
+
+    border:1px solid rgba(255,255,255,.12);
+
+    box-shadow:
+    0 0 30px rgba(177,89,255,.35),
+    0 0 60px rgba(177,89,255,.20);
+
+}
+
+.modal-content h2{
+
+    text-align:center;
+
+    font-size:28px;
+
+    margin-bottom:10px;
+
+}
+
+.modal-content p{
+
+    text-align:center;
+
+    color:#d8d8d8;
+
+    margin-bottom:25px;
+
+    line-height:1.6;
+
+}
+
+.lista-membros{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:10px 30px;
+
+    color:#e5e5e5;
+
+    font-size:15px;
+
+}
+
+.membro{
+
+    padding:7px 5px;
+
+    border-bottom:1px solid rgba(255,255,255,.06);
+
+}
+
+.fechar{
+
+    position:absolute;
+
+    top:15px;
+
+    right:20px;
+
+    font-size:30px;
+
+    color:white;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.fechar:hover{
+
+    transform:scale(1.2);
+
+}
+
+.btn-fechar{
+
+    display:block;
+
+    width:180px;
+
+    margin:30px auto 0;
+
+    text-align:center;
+
+}
+
+
+/* RODAPÉ */
 
 .footer{
 
@@ -233,13 +378,46 @@ body{
 
 }
 
-/* Celular */
+
+/* CELULAR */
 
 @media(max-width:700px){
 
+    body{
+
+        padding:25px 15px;
+
+    }
+
+    .header h1{
+
+        font-size:34px;
+
+    }
+
+    .logo{
+
+        width:150px;
+
+    }
+
+    .cards{
+
+        grid-template-columns:1fr;
+
+    }
+
     .lista-membros{
 
-        column-count:1;
+        grid-template-columns:1fr;
+
+    }
+
+    .modal-content{
+
+        margin:15px auto;
+
+        padding:30px 20px;
 
     }
 
@@ -249,9 +427,14 @@ body{
 
 </head>
 
+
 <body>
 
+
 <div class="container">
+
+
+<!-- CABEÇALHO -->
 
 <div class="header">
 
@@ -265,7 +448,11 @@ Bem-vindo à área exclusiva dos membros do Portugal Mode
 
 </div>
 
+
+<!-- CARDS -->
+
 <div class="cards">
+
 
 <!-- VÍDEOS EXCLUSIVOS -->
 
@@ -333,9 +520,9 @@ ABRIR DRIVE
 </div>
 
 
-<!-- MEMBROS -->
+<!-- MEMBROS E VIP -->
 
-<div class="card">
+<div class="card membros-card">
 
 <h2>🏆 Membros e VIP — Obrigado!</h2>
 
@@ -349,58 +536,17 @@ O apoio de vocês ajuda o canal
 a continuar crescendo.
 </p>
 
-<div class="lista-membros">
+<div class="membros-info">
 
-<div>Alessoxxx</div>
-<div>Marcel Fenili</div>
-<div>nariz_gaming</div>
-<div>Joao Carlos Monteiro</div>
-<div>Caio Oliveira</div>
-<div>Thiago Costa</div>
-<div>Francisco Kleber Silva Paiva</div>
-<div>Mateus Morais</div>
-<div>Anderson Vitor</div>
-<div>Gabriel Oliveira</div>
-<div>silvio honei Louzeiro</div>
-<div>pr9manixGD</div>
-<div>Thalles Bruno</div>
-<div>Rodrigo Sousa</div>
-<div>Filmes para todos</div>
-<div>jonas carvalho</div>
-<div>vinicius ferreira</div>
-<div>SyBeRfox21</div>
-<div>Thiago vicente vaz martins</div>
-<div>Wagner De Oliveira Pinheiro</div>
-<div>João Vitor Vieira Matos</div>
-<div>Mauriciop Castro</div>
-<div>ARTUR LIMAS FORTUNATO DO PRADO</div>
-<div>Ranqueando coisas</div>
-<div>Joel Lima</div>
-<div>N3xus DUDU</div>
-<div>rildosd</div>
-<div>Junior Santos</div>
-<div>Vinicius Fonseca</div>
-<div>Lucas Cabral</div>
-<div>Matheus Fernando</div>
-<div>Caio Meireles</div>
-<div>Fabio</div>
-<div>Matheus Souto</div>
-<div>FP</div>
-<div>Murilo Benetis</div>
-<div>ArturCost</div>
-<div>Lucas Albernaz</div>
-<div>Annyliz Games</div>
-<div>nebulosa 8-bits</div>
-<div>Felipe Fonseca</div>
-<div>Mariano Kiyoshi Yamamoto</div>
-<div>marcosfelipe batista</div>
-<div>Carlos Matheus</div>
-<div>matheus</div>
-<div>Wolf Tv</div>
-<div>Felipe Santos</div>
-<div>Portugal</div>
+👑 <strong>48 membros</strong> apoiando o Portugal Mode!
 
 </div>
+
+<button class="btn" onclick="abrirMembros()">
+
+VER MEMBROS
+
+</button>
 
 </div>
 
@@ -439,7 +585,119 @@ VER STATUS
 
 </div>
 
+
 </div>
+
+
+<!-- MODAL -->
+
+<div id="modalMembros" class="modal">
+
+<div class="modal-content">
+
+<span class="fechar" onclick="fecharMembros()">×</span>
+
+<h2>🏆 Membros e VIP — Obrigado!</h2>
+
+<p>
+Um agradecimento especial a todos vocês
+que fazem parte da comunidade Portugal Mode! ❤️
+</p>
+
+
+<div class="lista-membros">
+
+
+<div class="membro">Alessoxxx</div>
+<div class="membro">Marcel Fenili</div>
+
+<div class="membro">nariz_gaming</div>
+<div class="membro">Joao Carlos Monteiro</div>
+
+<div class="membro">Caio Oliveira</div>
+<div class="membro">Thiago Costa</div>
+
+<div class="membro">Francisco Kleber Silva Paiva</div>
+<div class="membro">Mateus Morais</div>
+
+<div class="membro">Anderson Vitor</div>
+<div class="membro">Gabriel Oliveira</div>
+
+<div class="membro">silvio honei Louzeiro</div>
+<div class="membro">pr9manixGD</div>
+
+<div class="membro">Thalles Bruno</div>
+<div class="membro">Rodrigo Sousa</div>
+
+<div class="membro">Filmes para todos</div>
+<div class="membro">jonas carvalho</div>
+
+<div class="membro">vinicius ferreira</div>
+<div class="membro">SyBeRfox21</div>
+
+<div class="membro">Thiago vicente vaz martins</div>
+<div class="membro">Wagner De Oliveira Pinheiro</div>
+
+<div class="membro">João Vitor Vieira Matos</div>
+<div class="membro">Mauriciop Castro</div>
+
+<div class="membro">ARTUR LIMAS FORTUNATO DO PRADO</div>
+<div class="membro">Ranqueando coisas</div>
+
+<div class="membro">Joel Lima</div>
+<div class="membro">N3xus DUDU</div>
+
+<div class="membro">rildosd</div>
+<div class="membro">Junior Santos</div>
+
+<div class="membro">Vinicius Fonseca</div>
+<div class="membro">Lucas Cabral</div>
+
+<div class="membro">Matheus Fernando</div>
+<div class="membro">Caio Meireles</div>
+
+<div class="membro">Fabio</div>
+<div class="membro">Matheus Souto</div>
+
+<div class="membro">FP</div>
+<div class="membro">Murilo Benetis</div>
+
+<div class="membro">ArturCost</div>
+<div class="membro">Lucas Albernaz</div>
+
+<div class="membro">Annyliz Games</div>
+<div class="membro">nebulosa 8-bits</div>
+
+<div class="membro">Felipe Fonseca</div>
+<div class="membro">Mariano Kiyoshi Yamamoto</div>
+
+<div class="membro">marcosfelipe batista</div>
+<div class="membro">Carlos Matheus</div>
+
+<div class="membro">matheus</div>
+<div class="membro">Wolf Tv</div>
+
+<div class="membro">Felipe Santos</div>
+<div class="membro">Portugal</div>
+
+
+</div>
+
+
+<button
+class="btn btn-fechar"
+onclick="fecharMembros()">
+
+FECHAR
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- RODAPÉ -->
 
 <div class="footer">
 
@@ -447,7 +705,57 @@ Portugal Mode • Portal VIP
 
 </div>
 
+
 </div>
+
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+function abrirMembros(){
+
+    document.getElementById("modalMembros").style.display = "block";
+
+    document.body.style.overflow = "hidden";
+
+}
+
+
+function fecharMembros(){
+
+    document.getElementById("modalMembros").style.display = "none";
+
+    document.body.style.overflow = "auto";
+
+}
+
+
+window.onclick = function(event){
+
+    const modal = document.getElementById("modalMembros");
+
+    if(event.target === modal){
+
+        fecharMembros();
+
+    }
+
+}
+
+
+document.addEventListener("keydown", function(event){
+
+    if(event.key === "Escape"){
+
+        fecharMembros();
+
+    }
+
+});
+
+</script>
+
 
 </body>
 
